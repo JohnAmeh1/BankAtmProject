@@ -213,7 +213,44 @@ public class BankAtmUI {
             }
         });
     }
-    
+    JFrame FrameWithdrawCurrent = new JFrame("window");
+    JButton WithdrawCurrent = new JButton("Withdraw");
+    //    JLabel Welcome = new JLabel("");
+    JLabel AmountWithCurrent = new JLabel(" Enter Withdrawal Amount:");
+    JTextField AmountFieldWithCurrent = new JTextField();
+
+    public void withdrawCurrentUI() {
+        FrameWithdrawCurrent.setSize(450, 500);
+        FrameWithdrawCurrent.setLayout(new GridLayout(3, 1));
+        FrameWithdrawCurrent.setVisible(true);
+        FrameWithdrawCurrent.setLocationRelativeTo(null);
+        FrameWithdrawCurrent.setTitle("Withdrawal");
+
+        FrameWithdrawCurrent.add(AmountWithCurrent);
+        FrameWithdrawCurrent.add(AmountFieldWithCurrent);
+        FrameWithdrawCurrent.add(WithdrawCurrent);
+
+        WithdrawCurrent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                BankAtm assObj = new BankAtm();
+//                float WithCurrent = (Float.parseFloat(AmountFieldWithCurrent.getText()));
+                float solution1 = assObj.withdrawalBalance(Float.parseFloat(AmountFieldWithCurrent.getText()));
+                JOptionPane.showMessageDialog(null, "You withdrew " +uniChar+solution1);
+
+
+
+                float WithdrawSave = (Float.parseFloat(AmountFieldWithSave.getText()));
+                float solution = assObj.withdrawalBalance(Float.parseFloat(AmountFieldWithSave.getText()));
+                if (WithdrawSave > 20000) {
+                    JOptionPane.showMessageDialog(null, "Withdrawal limit is "+uniChar+"20000");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Your new balance is "+uniChar+solution);
+                }
+
+            }
+        });
+    }
 }
 
 
