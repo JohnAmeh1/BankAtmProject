@@ -186,6 +186,34 @@ public class BankAtmUI {
             }
         });
     }
+    JFrame FrameDepositCurrent = new JFrame("window");
+    JButton DepositCurrent = new JButton("Deposit");
+    //    JLabel Welcome = new JLabel("");
+    JLabel AmountDepCurrent = new JLabel(" Enter Deposit Amount:");
+    JTextField AmountFieldDepCurrent = new JTextField();
+//    JLabel test = new JLabel(AmountFieldDepSave);
+
+    public void depositCurrentUI(){
+        FrameDepositCurrent.setSize(450, 500);
+        FrameDepositCurrent.setLayout(new GridLayout(3, 1));
+        FrameDepositCurrent.setVisible(true);
+        FrameDepositCurrent.setLocationRelativeTo(null);
+        FrameDepositCurrent.setTitle("Deposit");
+
+        FrameDepositCurrent.add(AmountDepCurrent);
+        FrameDepositCurrent.add(AmountFieldDepCurrent);
+        FrameDepositCurrent.add(DepositCurrent);
+
+        DepositCurrent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                BankAtm assObj = new BankAtm();
+                float answer1 = assObj.balance1 (Float.parseFloat(AmountFieldDepCurrent.getText()));
+                JOptionPane.showMessageDialog(null, "You new balance " +uniChar+answer1);
+            }
+        });
+    }
+    
 }
 
 
