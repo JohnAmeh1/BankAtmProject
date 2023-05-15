@@ -157,6 +157,35 @@ public class BankAtmUI {
             }
         });
     }
+    JFrame FrameCurrent = new JFrame("window");
+    JLabel BalanceCurrent = new JLabel("Balance: "+uniChar+"100000");
+    JButton depositCurrent = new JButton("Deposit");
+    JButton withdrawCurrent = new JButton("Withdraw");
+
+    public void currentUI() {
+        FrameCurrent.setSize(450, 500);
+        FrameCurrent.setLayout(new GridLayout(3, 1));
+        FrameCurrent.setVisible(true);
+        FrameCurrent.setLocationRelativeTo(null);
+        FrameCurrent.setTitle("Account: Current");
+
+        FrameCurrent.add(BalanceCurrent);
+        FrameCurrent.add(depositCurrent);
+        FrameCurrent.add(withdrawCurrent);
+
+        depositCurrent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                depositCurrentUI();
+            }
+        });
+        withdrawCurrent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                withdrawCurrentUI();
+            }
+        });
+    }
 }
 
 
