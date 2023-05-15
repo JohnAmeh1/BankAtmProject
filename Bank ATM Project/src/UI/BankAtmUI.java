@@ -62,12 +62,12 @@ public class BankAtmUI {
                 savingsUI();
             }
         });
-//        accountTypeCurrent.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                currentUI();
-//            }
-//        });
+       accountTypeCurrent.addActionListener(new ActionListener() {
+           @Override
+           public void actionPerformed(ActionEvent e) {
+                currentUI();
+            }
+        });
     }
     JFrame FrameSavings = new JFrame("window");
     JLabel Balance = new JLabel("Balance: "+uniChar+"100000");
