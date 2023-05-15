@@ -237,17 +237,6 @@ public class BankAtmUI {
 //                float WithCurrent = (Float.parseFloat(AmountFieldWithCurrent.getText()));
                 float solution1 = assObj.withdrawalBalance(Float.parseFloat(AmountFieldWithCurrent.getText()));
                 JOptionPane.showMessageDialog(null, "You withdrew " +uniChar+solution1);
-
-
-
-                float WithdrawSave = (Float.parseFloat(AmountFieldWithSave.getText()));
-                float solution = assObj.withdrawalBalance(Float.parseFloat(AmountFieldWithSave.getText()));
-                if (WithdrawSave > 20000) {
-                    JOptionPane.showMessageDialog(null, "Withdrawal limit is "+uniChar+"20000");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Your new balance is "+uniChar+solution);
-                }
-
             }
         });
     }
